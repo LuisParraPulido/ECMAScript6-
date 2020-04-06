@@ -78,3 +78,55 @@ console.log(globalvalue)
 console.log(globalvalue2) //no se puede acceder
 const a = 'b'; 
 a = 'a';//It's not posible
+
+//---------------------------------------------------------------------------------------
+
+//Parámetros en objetos
+let name = 'luis';
+let age = '32';
+//Before
+obj = { name: name, age: age }
+//ES6 now
+obj2 = { name, age };
+console.log(obj)
+console.log(obj2)
+
+//-----------------------------------------------------------------------
+
+//Arrow Functions
+const names = [
+  { name: 'Luis', age: 32 },
+  { name: 'Laura', age: 27 }
+]
+//Before
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+})
+//ES6 now
+let listOfNames2 = names.map(item => console.log(item.name));
+//form2
+const listOfNames3 = (name, age, country) => {
+  //
+}
+//form3
+const listOfNames4 = name => {
+  //
+}
+//other posibility
+const square = num => num * num;
+
+//------------------------------------------------------------------------------
+
+//Promises
+const helloPromise = (valor) => {
+  return new Promise((resolve, reject) => {
+    if(valor === true) {
+      resolve('Hey!');
+    } else {
+      reject('Ups!!');
+    }
+  });
+}
+helloPromise(false)
+  .then(response => console.log(response))
+  .catch(error => console.log(error))
